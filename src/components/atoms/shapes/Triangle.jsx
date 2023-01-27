@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { PropTypes } from 'prop-types'
 import styled from 'styled-components'
 import { colors } from '../../../styles'
@@ -7,6 +8,7 @@ function Triangle({
   h = 20,
   color = colors.font.base,
   direction = 'right',
+  dataTestId="arrow",
   ...rest
 }) {
   const points = {
@@ -17,7 +19,7 @@ function Triangle({
   }
 
   return (
-    <svg width={w} height={h} {...rest}>
+    <svg data-testid = {dataTestId} width={w} height={h} {...rest}>
       <polygon points={points[direction].join(' ')} fill={color} />
       Sorry, your browser does not support inline SVG.
     </svg>
@@ -28,6 +30,7 @@ Triangle.propTypes = {
   w: PropTypes.number,
   h: PropTypes.number,
   direction: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  dataTestId: PropTypes.string,
   color: PropTypes.string,
 }
 

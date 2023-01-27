@@ -17,7 +17,7 @@ describe('Data', () => {
     })
   })
 
-  it.only('renders district table table', async () => {
+  it('renders district table table', async () => {
     render(<Data />)
     await waitFor(() => {
       expect(screen.getByText('Piso 2')).toBeInTheDocument()

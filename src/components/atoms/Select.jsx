@@ -6,7 +6,7 @@ export const SelectOption = styled.option``
 
 function Select({ id, name, onChange, children, ...rest }) {
   return (
-    <select id={id} name={name} onChange={onChange} {...rest}>
+    <select data-testid={id} id={id} name={name} onChange={onChange} {...rest}>
       {children}
     </select>
   )
